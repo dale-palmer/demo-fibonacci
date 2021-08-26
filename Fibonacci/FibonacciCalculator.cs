@@ -7,20 +7,13 @@ namespace Fibonacci
         public static int Calculate(int n) =>
             n < 2 ? n : Calculate(n - 1) + Calculate(n - 2);
 
-        public static bool IsFibonacci(int value)
-        {
-            var term = 0;
-            var result = 0;
+        public static bool IsFibonacci(int value) =>
+            IsSquareNumber(FiveTimesSquare(value) + 4) || IsSquareNumber(FiveTimesSquare(value) - 4);
 
-            while (result < value)
-            {
-                result = Calculate(term);
-                if (result == value)
-                    return true;
-                term++;
-            }
+        private static bool IsSquareNumber(int x) =>
+            Math.Pow((int)Math.Sqrt(x), 2) == x;
 
-            return false;
-        }
+        private static int FiveTimesSquare(int value) =>
+            5 * (int)Math.Pow(value, 2);
     }
 }
