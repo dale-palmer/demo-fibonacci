@@ -17,5 +17,17 @@ namespace Fibonacci.Tests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(5, true)]
+        [TestCase(8, true)]
+        [TestCase(21, true)]
+        [TestCase(10, false)]
+        [TestCase(25, false)]
+        public void FibonacciCalculator_IsFibonacci_WithValue_ReturnsResult(int value, bool expected)
+        {
+            var actual = FibonacciCalculator.IsFibonacci(value);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
