@@ -11,9 +11,9 @@ namespace Fibonacci.Tests
         [TestCase(4, 3)]
         [TestCase(5, 5)]
         [TestCase(6, 8)]
-        public void FibonacciCalculator_Calculate_WithTerm_ReturnsValue(int term, int expected)
+        public void FibonacciCalculator_GetTerm_WithTerm_ReturnsValue(int term, int expected)
         {
-            var actual = FibonacciCalculator.Calculate(term);
+            var actual = FibonacciCalculator.GetTerm(term);
 
             Assert.AreEqual(expected, actual);
         }
